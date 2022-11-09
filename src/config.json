@@ -1,7 +1,7 @@
 {
     "database_name": "SQL_PROJECT",
     "database_version": "1.0",
-    "database_description": "SQL Project from School By Leo HAIDAR",
+    "database_description": "SQL Project from School By ByLife :)",
     "tables": [
         {
             "table_name": "ERROR",
