@@ -1,0 +1,273 @@
+{
+    "database_name": "SQL_PROJECT",
+    "database_version": "1.0",
+    "database_description": "SQL Project from School By Leo HAIDAR",
+    "tables": [
+        {
+            "table_name": "ERROR",
+            "columns" : [
+                {
+                    "name": "message",
+                    "type": "TEXT"
+                }
+            ]
+        },
+        { 
+            "table_name": "users",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "primary": true,
+                    "autoincrement": true
+                },
+                {
+                    "name": "name",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "email",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "password",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "created_at",
+                    "type": "DATE"
+                }
+            ]
+        },
+        {
+            "table_name": "users_adress",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "primary": true,
+                    "autoincrement": true
+                },
+                {
+                    "name": "user_id",
+                    "type": "INTEGER",
+                    "foreign": "user.id"
+                },
+                {
+                    "name": "street",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "number",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "city",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "state",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "country",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "zip_code",
+                    "type": "TEXT",
+                    "length": 255
+                }
+            ]
+        },
+        {
+            "table_name": "products",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "primary": true,
+                    "autoincrement": true
+                },
+                {
+                    "name": "name",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "description",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "price",
+                    "type": "REAL"
+                },
+                {
+                    "name": "created_at",
+                    "type": "DATE"
+                }
+            ]
+        },
+        {
+            "table_name": "users_cart",
+            "columns": [
+                    {
+                        "name": "id",
+                        "type": "INTEGER",
+                        "primary": true,
+                        "autoincrement": true
+                    },
+                    {
+                        "name": "user_id",
+                        "type": "INTEGER",
+                        "foreign": "user.id"
+                    },
+                    {
+                        "name": "product_id",
+                        "type": "INTEGER",
+                        "foreign": "products.id"
+                    },
+                    {
+                        "name": "quantity",
+                        "type": "INTEGER"
+                    }
+                ]
+            },
+            {
+                "table_name": "users_commands",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "INTEGER",
+                        "primary": true,
+                        "autoincrement": true
+                    },
+                    {
+                        "name": "user_id",
+                        "type": "INTEGER",
+                        "foreign": "user.id"
+                    },
+                    {
+                        "name": "product_id",
+                        "type": "INTEGER",
+                        "foreign": "products.id"
+                    },
+                    {
+                        "name": "quantity",
+                        "type": "INTEGER"
+                    },
+                    {
+                        "name": "created_at",
+                        "type": "DATE"
+                    }
+                ]
+            },
+        {
+            "table_name":"invoices",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "primary": true,
+                    "autoincrement": true
+                },
+                {
+                    "name": "user_id",
+                    "type": "INTEGER",
+                    "foreign": "user.id"
+                },
+                {
+                    "name": "product_id",
+                    "type": "INTEGER",
+                    "foreign": "products.id"
+                },
+                {
+                    "name": "quantity",
+                    "type": "INTEGER"
+                },
+                {
+                    "name": "created_at",
+                    "type": "DATE"
+                }
+            ]
+        },
+        {
+            "table_name": "products_rating",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "primary": true,
+                    "autoincrement": true
+                },
+                {
+                    "name": "user_id",
+                    "type": "INTEGER",
+                    "foreign": "user.id"
+                },
+                {
+                    "name": "product_id",
+                    "type": "INTEGER",
+                    "foreign": "products.id"
+                },
+                {
+                    "name": "rating",
+                    "type": "INTEGER"
+                },
+                {
+                    "name": "created_at",
+                    "type": "DATE"
+                }
+            ]
+        },
+        {
+            "table_name": "users_payment",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "primary": true,
+                    "autoincrement": true
+                },
+                {
+                    "name": "user_id",
+                    "type": "INTEGER",
+                    "foreign": "user.id"
+                },
+                {
+                    "name": "card_number",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "card_name",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "card_expiration",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "card_cvv",
+                    "type": "TEXT",
+                    "length": 255
+                },
+                {
+                    "name": "created_at",
+                    "type": "DATE"
+                }
+            ]
+        }
+    ]
+}
